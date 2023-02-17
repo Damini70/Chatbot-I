@@ -4,7 +4,8 @@ import 'react-chatbot-kit/build/main.css';
 import config from './config.js';
 import MessageParser from './MessageParser.js';
 import ActionProvider from './ActionProvider.js';
-import { useState } from "react";
+
+
 
 // import "./App.css";
 
@@ -14,12 +15,13 @@ function App() {
   return (
     <div className="App">
       
-    <div style={{maxWidth:"400px", backgroundColor: "pink",padding:"1rem",borderRadius: "0.3rem" }}>
+    <div style={{ width:"340px",backgroundColor: "pink",padding:"1rem",borderRadius: "0.3rem" }}>
       {/* <p>{count}</p> */}
       <Chatbot config={config}  messageParser={MessageParser}
         actionProvider={ActionProvider}   headerText='Chatbot'
         placeholderText='Write your message'
         disableScrollToBottom/>
+        
     </div>
     </div>
   );

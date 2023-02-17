@@ -1,5 +1,5 @@
 {
-  "homepage": "https://chatbot_app.com",
+  "homepage": "https://damini_raj.github.io/my-app",
   "name": "chatbot_app",
   "version": "0.1.0",
   "private": true,
@@ -16,11 +16,12 @@
     "react-icons": "^4.7.1",
     "react-js-dialog-box": "^1.1.6",
     "react-scripts": "5.0.1",
+    "react-toastify": "^9.1.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "predeploy": "npm run build",
-     "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

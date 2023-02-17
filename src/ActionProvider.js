@@ -3,7 +3,7 @@ import React from 'react';
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   // console.log(isOpen);
   const handleHello = () => {
-    const botMessage = createChatBotMessage('Hello. Nice to meet you. These are our services',{widget:"services"
+    const botMessage = createChatBotMessage('Hello. Nice to meet you. These are our services. please click on anyone to select and to move forward, Please type budget.',{widget:"services"
     },
     );
 
@@ -13,7 +13,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }));
   };
   const handleService=()=>{
-    const botMessage = createChatBotMessage('Thanks for the selection. These are our Budget',{widget:"budget"
+    const botMessage = createChatBotMessage('Thanks for the selection. These are our Budget. Click on anyone to select.',{widget:"budget"
     },
     );
 

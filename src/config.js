@@ -1,6 +1,5 @@
 import { createChatBotMessage } from 'react-chatbot-kit';
 import MyAvatar from './MyAvatar';
-import {CgUserAdd} from "react-icons/cg";
 import Form from "./Form.js";
 import Service from './Service';
 import Budget from "./Budget.js";

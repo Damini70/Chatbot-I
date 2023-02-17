@@ -1,4 +1,5 @@
 .App {
+
   text-align: center;
   background-color: grey;
   min-height: 100vh;
@@ -7,11 +8,15 @@
   align-items: center;
 }
 .react-chatbot-kit-chat-container {
-  background-color:red;
+ position:absolute;
+ width:400px
 }
 
 .react-chatbot-kit-chat-inner-container {
-  background-color:red;
+  width:fit-content;
+  height: fit-content;
+  padding-left: 1rem;
+ 
 }
 
 
@@ -25,6 +30,7 @@
 }
 
 .react-chatbot-kit-chat-message-container {
+  margin: 2rem;
   border-radius: 0.3rem;
   /* background-color: blue; */
 
