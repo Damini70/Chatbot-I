@@ -1,10 +1,12 @@
 import React from 'react';
-import {FcBusinesswoman } from "react-icons/fc";
+import {FcManager } from "react-icons/fc";
 
 function MyAvatar(props) {
     return (
-        <div style={{marginRight:"0.8rem", borderRadius:"1rem"}}>
-           < FcBusinesswoman style={{fontSize:"1.5rem"}}/>
+        <div style={{marginRight:"1rem"}}>
+           {/* < FcBusinesswoman style={{fontSize:"1.5rem"}}/> */}
+           <img src={process.env.PUBLIC_URL + '/image/Pic.jpg'}  style={{ width:35,height:35 }} alt="Example" />
+
         </div>
     );
 }

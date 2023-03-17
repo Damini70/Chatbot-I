@@ -3,13 +3,12 @@ import MyAvatar from './MyAvatar';
 import Form from "./Form.js";
 import Service from './Service';
 import Budget from "./Budget.js";
+import User from './User';
 
 const company="Iotas";
 
 
-function form(){
 
-}
 
 
 const config = {
@@ -41,6 +40,9 @@ const config = {
 //    // Replaces the default user chat message
 //    userChatMessage: (props) => <MyCustomUserChatMessage {...props} />
  },
+ customMessages:{
+  custom:(props)=><User {...props}/>
+ }
 };
 
 export default config;

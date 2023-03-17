@@ -1,8 +1,28 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
 function Budget(props) {
+    const [budget,setBudget]=useState([]);
+    useEffect(()=>{
+        const fetchApi = async () => {
+            try {
+              const response = await fetch(
+               "https://chatapi.iotasonl.com/api/web/Master/Budget_List",
+                {
+                  method: "POST"
+                }
+              );
+              const data = await response.json();
+              console.log(data);
+              setBudget(data);
+              console.log("service",budget);
+            } catch (error) {
+              console.error(error);
+            }
+          };
+          fetchApi();
+        },[])
     function result(){
         toast.success(' Thanku for the response. We will get back to you in 24 hours.', {
             position: "top-center",
@@ -14,14 +34,14 @@ function Budget(props) {
             progress: undefined,
             theme: "light",
             });
-        
+
     }
     return (
         <div  style={{marginLeft:"2.5rem"}}>
-           <button onClick={result}  style={{padding:"0.5rem",borderRadius:"1rem",cursor:"pointer"}}>50K to 1L</button>
-           <button onClick={result}  style={{padding:"0.5rem",borderRadius:"1rem",cursor:"pointer"}}>1L to 3L</button>
-           <button onClick={result}  style={{padding:"0.5rem",borderRadius:"1rem",cursor:"pointer"}}>3L to 5L</button>
-           <button onClick={result}  style={{padding:"0.5rem",borderRadius:"1rem",cursor:"pointer"}}>5L above</button>
+     {budget.data.map((item)=>{
+            return  <><button onClick={result}  style={{padding:"0.5rem",borderRadius:"1rem",cursor:"pointer"}}>{item.budget_name}</button></> 
+        })} 
+       
            <ToastContainer
 position="top-center"
 autoClose={5000}
