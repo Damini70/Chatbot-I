@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Budget(props) {
     const [budget,setBudget]=useState([]);
+    const [show,setShow]=useState(false);
     useEffect(()=>{
         const fetchApi = async () => {
             try {
@@ -15,7 +16,7 @@ function Budget(props) {
               );
               const data = await response.json();
               console.log(data);
-              setBudget(data);
+              setBudget(data.data);
               console.log("service",budget);
             } catch (error) {
               console.error(error);
@@ -23,6 +24,10 @@ function Budget(props) {
           };
           fetchApi();
         },[])
+
+        function list(){
+          setShow(true)
+        }
     function result(){
         toast.success(' Thanku for the response. We will get back to you in 24 hours.', {
             position: "top-center",
@@ -38,9 +43,10 @@ function Budget(props) {
     }
     return (
         <div  style={{marginLeft:"2.5rem"}}>
-     {budget.data.map((item)=>{
+         
+     {show?<>{budget.map((item)=>{
             return  <><button onClick={result}  style={{padding:"0.5rem",borderRadius:"1rem",cursor:"pointer"}}>{item.budget_name}</button></> 
-        })} 
+        })}</>:<> <button onClick={list}  style={{padding:"0.5rem",borderRadius:"1rem",cursor:"pointer"}}>Our Budget</button></>} 
        
            <ToastContainer
 position="top-center"

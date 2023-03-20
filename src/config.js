@@ -4,6 +4,8 @@ import Form from "./Form.js";
 import Service from './Service';
 import Budget from "./Budget.js";
 import User from './User';
+import NameForm from './NameForm.js';
+import Address from './Address.js';
 
 const company="Iotas";
 
@@ -12,13 +14,20 @@ const company="Iotas";
 
 
 const config = {
-  initialMessages: [createChatBotMessage(`Hi there! Welcome to the ${company} chatbot , your bot assistant. I can help you to navigate through the website / explain our new offers via chat. To start, please type "Hi" and To stay connected with us please type your name, number and email. we’ll be happy to assist you right away!`,{
+  initialMessages: [createChatBotMessage(`Hi there! Welcome to the ${company} chatbot , your bot assistant. I can help you to navigate through the website / explain our new offers via chat. To start, please type "Hi" an your name. we’ll be happy to assist you right away!`,{
    widget:"userDetails",
   }),],
  widgets:[{
   widgetName: "userDetails",
   widgetFunc: (props) => <Form {...props} />,
+ },{
+  widgetName: "nameform",
+  widgetFunc: (props) => <NameForm {...props} />,
  },
+{
+  widgetName:"address",
+  widgetFunc:(props=><Address{...props}/>)
+},
  {
   widgetName:"services",
   widgetFunc:(props)=> <Service {...props}/>,
@@ -40,6 +49,7 @@ const config = {
 //    // Replaces the default user chat message
 //    userChatMessage: (props) => <MyCustomUserChatMessage {...props} />
  },
+  
  customMessages:{
   custom:(props)=><User {...props}/>
  }

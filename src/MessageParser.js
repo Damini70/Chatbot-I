@@ -3,14 +3,26 @@ import React from 'react';
 const MessageParser = ({ children, actions }) => {
   const parse = (message) => {
     const lowercase=message.toLowerCase();
-    if (lowercase.includes('hey')||lowercase.includes('hi')||lowercase.includes('hello')) {
+    if(lowercase.trim()==""){
+      actions.handleEmpty();
+    
+    }
+    if (lowercase.includes('@gmail.com')) {
         actions.handleHello();
+      }else{
+        
       }
-    else if(lowercase.includes('budget')||lowercase.includes('price')||lowercase.includes('cost')) {
+    if(lowercase.includes('budget')||lowercase.includes('price')||lowercase.includes('cost')) {
       actions.handleService();
-    } else{
+    } 
+    if(lowercase.includes('hi')||lowercase.includes('hey')||lowercase.includes('hello')){
       actions.handleOther()
     }
+    if(lowercase.includes('services'||lowercase.includes('service'))){
+      actions.handleHello();
+    }
+   
+      
   };
 
   return (
